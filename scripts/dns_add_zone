@@ -11,11 +11,11 @@ CONFFILE=named.conf.mrt-zones
 if [[ ! -f "${DIRCONF}/${CONFFILE}" ]]
 	then
 		echo "Creating conffile."
-		cd $DIRCONF && vi $CONFFILE
-		echo 'include "${DIRCONF}/${CONFFILE}";' >> named.conf.local
+		cd $DIR && vi $CONFFILE
+		echo 'include "${DIR}/${CONFFILE}";' >> named.conf.local
 	else
-		echo "Entering path ${DIRCONF}/${CONFFILE}"
-		cd $DIRCONF
+		echo "Entering path ${DIR}/${CONFFILE}"
+		cd $DIR
 	fi
 
 #Create DNS-ZONE
