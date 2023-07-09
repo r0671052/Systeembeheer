@@ -1,11 +1,6 @@
-
 zone "1.thomas-pede.sb.uclllabs.be" {
     type master;
     file "/etc/bind/db.1.thomas-pede.sb.uclllabs.be";
-};
-zone "test.thomas-pede.sb.uclllabs.be" {
-    type master;
-    file "/etc/bind/db.test.thomas-pede.sb.uclllabs.be";
 };
 zone "test2.thomas-pede.sb.uclllabs.be" {
     type master;
@@ -30,4 +25,8 @@ zone "test20.thomas-pede.sb.uclllabs.be" {
 zone "workpls.thomas-pede.sb.uclllabs.be" {
     type master;
     file "/etc/bind/db.workpls.thomas-pede.sb.uclllabs.be";
+};
+zone "workpls2.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.workpls2.thomas-pede.sb.uclllabs.be";
 };
