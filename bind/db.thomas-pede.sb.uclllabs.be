@@ -1,6 +1,6 @@
 $TTL 604800
 @       IN      SOA     ns1.uclllabs.be. admin.thomas-pede.sb.uclllabs.be. (
-		        2023070910    ;Serial
+		        2023070920    ;Serial
                               604800     ; Refresh
                               86400      ; Retry
                               2419200    ; Expire
@@ -12,6 +12,8 @@ $TTL 604800
 ns      IN      A       193.191.177.223
 www     IN      A       193.191.177.223
 test    IN      A       193.191.177.254
+@	    IN	    AAAA	2001:6a8:2880:a077::DF
+ns	    IN	    AAAA	2001:6a8:2880:a077::DF
 1	IN	NS	ns.thomas-pede.sb.uclllabs.be.
 test2	IN	NS	ns.thomas-pede.sb.uclllabs.be.
 test10	IN	NS	ns.thomas-pede.sb.uclllabs.be.
