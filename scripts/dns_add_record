@@ -9,3 +9,17 @@ ZONE=$5
 
 echo "Gekozen option is $OPTION"
 
+while getopts 't:' OPTIONS; do
+	case "$OPTIONS" in
+		t)
+		   if [ $OPTION == A ]
+			then
+				echo "Writing record"
+				echo ";Name Server Records"		 >>/etc/bind/db.$ZONE
+				echo "${RNAME}	IN	A	${IP}"    >>/etc/bind/db.$ZONE
+		  else
+				echo "$RTYPE"
+		  fi
+	esac
+done
+
