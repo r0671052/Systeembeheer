@@ -16,22 +16,22 @@ while getopts 't:' OPTIONS; do
 			then
 				echo "Writing record"
 				echo ";Name Server Records"		 >>/etc/bind/db.$ZONE
-				echo "${RNAME}	IN	A	${IP}"    >>/etc/bind/db.$ZONE
+				echo "${NAME}	IN	A	${IP}"    >>/etc/bind/db.$ZONE
                    elif [ $RTYPE == MX ]
 			then
 				echo "Creating record"
 				echo ";Name Server Records"		 >>/etc/bind/db.$ZONE
-				echo "${RNAME}   IN      A       ${IP}"    >>/etc/bind/db.$ZONE
+				echo "${NAME}   IN      A       ${IP}"    >>/etc/bind/db.$ZONE
 				echo "Writing mx record"
 				echo ";Name Server MX"			>>/etc/bind/db.$ZONE
-				echo "@	IN	MX	10 ${RNAME}.${ZONE}."  >>/etc/bind/db.$ZONE
+				echo "@	IN	MX	10 ${NAME}.${ZONE}."  >>/etc/bind/db.$ZONE
 		   elif [ $RTYPE == CNAME ]
 			then
 				echo "Creating CNAME record"
 				echo ";Name Server CNAME"		>>/etc/bind/db.$ZONE
-				echo "${RNAME}   IN      CNAME       ${IP}"    >>/etc/bind/db.$ZONE
+				echo "${NAME}   IN      CNAME       ${IP}"    >>/etc/bind/db.$ZONE
 		  else
-				echo "$RTYPE"
+				echo "$OPTION"
 		  fi
 	esac
 done
