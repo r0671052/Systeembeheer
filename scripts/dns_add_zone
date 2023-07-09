@@ -8,7 +8,7 @@ DIR=/etc/bind
 CONFFILE=named.conf.mrt-zones
 
 #Does conf file exist?
-if [[ ! -f "${DIRCONF}/${CONFFILE}" ]]
+if [[ ! -f "${DIR}/${CONFFILE}" ]]
 	then
 		echo "Creating conffile."
 		cd $DIR && vi $CONFFILE
@@ -19,12 +19,12 @@ if [[ ! -f "${DIRCONF}/${CONFFILE}" ]]
 	fi
 
 #Create DNS-ZONE
-echo "Adding DNS-ZONE ${SUBZONE}.${DOMAIN}
+echo "Adding DNS-ZONE ${SUBZONE}.${DOMAIN}"
 cat >> /etc/bind/named.conf.mrt-zones << EOL
 zone "${SUBZONE}.${DOMAIN}" {
 	type master;
-	file "${DIR}/db.${SUBZONE}.${DOMAIN}";
-}; 
+	file "/etc/bind/db.${SUBZONE}.${DOMAIN}";
+};
 EOL
 
 echo "Zonefile config ${CONFFILE} complete"
@@ -60,5 +60,5 @@ echo "${SUBZONE}	IN	NS	ns.${DOMAIN}." >> /etc/bind/db.${DOMAIN}
 
 
 
-
+rndc reload
 systemctl reload bind9
