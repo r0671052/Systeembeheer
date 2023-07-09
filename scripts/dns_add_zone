@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#Variables
+DOMAIN="thomas-pede.sb.uclllabs.be"
+SUBZONE=$1
+IP="193.191.177.223"
+DIR=/etc/bind
+CONFFILE=named.conf.mrt-zones
+
+#Does conf file exist?
+if [[ ! -f "${DIRCONF}/${CONFFILE}" ]]
+	then
+		echo "Creating conffile."
+		cd $DIRCONF && vi $CONFFILE
+		echo 'include "${DIRCONF}/${CONFFILE}";' >> named.conf.local
+	else
+		echo "Entering path ${DIRCONF}/${CONFFILE}"
+		cd $DIRCONF
+	fi
+
+#Create DNS-ZONE
+echo "Adding DNS-ZONE ${SUBZONE}.${DOMAIN}
+cat >> /etc/bind/named.conf.mrt-zones << EOL
+zone "${SUBZONE}.${DOMAIN}" {
+	type master;
+	file "/etc/bind/db.{SUBZONE}.{DOMAIN}";
+}; 
+EOL
+systemctl reload bind9
