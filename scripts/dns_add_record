@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Variables
+FLAG=$1
+OPTION=$2
+NAME=$3
+IP=$4
+ZONE=$5
+
+echo "Gekozen option is $OPTION"
+
