@@ -23,7 +23,42 @@ echo "Adding DNS-ZONE ${SUBZONE}.${DOMAIN}
 cat >> /etc/bind/named.conf.mrt-zones << EOL
 zone "${SUBZONE}.${DOMAIN}" {
 	type master;
-	file "/etc/bind/db.{SUBZONE}.{DOMAIN}";
+	file "${DIR}/db.${SUBZONE}.${DOMAIN}";
 }; 
 EOL
+
+echo "Zonefile config ${CONFFILE} complete"
+
+#Create zonefile
+
+echo "Creating new zonefile for ${SUBZONE}.${DOMAIN}"
+cat << EOF >>/etc/bind/db.$SUBZONE.$DOMAIN
+
+
+
+\$TTL 360
+@	IN	SOA	ns.$SUBZONE.$DOMAIN. root.$SUBZONE.$DOMAIN. (
+				1	; Serial
+				360	; Refresh
+				360	; Retry
+				360	; Expire
+				360 	; Negative Cache TTL
+				)
+;
+@	IN	NS	ns.$SUBZONE.$DOMAIN.
+@	IN	NS	ns.$DOMAIN.
+ns	IN	A	$IP
+@	IN	A	$IP
+
+
+
+EOF
+
+echo "Zonefile created"
+echo "${SUBZONE}	IN	NS	ns.${DOMAIN}." >> /etc/bind/db.${DOMAIN}
+
+
+
+
+
 systemctl reload bind9
