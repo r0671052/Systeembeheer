@@ -12,3 +12,15 @@ $TTL 604800
 ns      IN      A       193.191.177.223
 www     IN      A       193.191.177.223
 test    IN      A       193.191.177.254
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+1	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+test	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+test2	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+test10	IN	NS	ns.thomas-pede.sb.uclllabs.be.

@@ -1,0 +1,17 @@
+
+zone "1.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.1.thomas-pede.sb.uclllabs.be";
+};
+zone "test.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.test.thomas-pede.sb.uclllabs.be";
+};
+zone "test2.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.test2.thomas-pede.sb.uclllabs.be";
+};
+zone "test10.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.test10.thomas-pede.sb.uclllabs.be";
+};
