@@ -24,3 +24,6 @@ test    IN      A       193.191.177.254
 test	IN	NS	ns.thomas-pede.sb.uclllabs.be.
 test2	IN	NS	ns.thomas-pede.sb.uclllabs.be.
 test10	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+foobar	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+test14	IN	NS	ns.thomas-pede.sb.uclllabs.be.
+test20	IN	NS	ns.thomas-pede.sb.uclllabs.be.

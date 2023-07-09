@@ -15,3 +15,15 @@ zone "test10.thomas-pede.sb.uclllabs.be" {
     type master;
     file "/etc/bind/db.test10.thomas-pede.sb.uclllabs.be";
 };
+zone "foobar.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.foobar.thomas-pede.sb.uclllabs.be";
+};
+zone "test14.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.test14.thomas-pede.sb.uclllabs.be";
+};
+zone "test20.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.test20.thomas-pede.sb.uclllabs.be";
+};
