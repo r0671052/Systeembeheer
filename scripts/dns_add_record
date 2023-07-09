@@ -35,3 +35,6 @@ while getopts 't:' OPTIONS; do
 		  fi
 	esac
 done
+
+rndc reload
+systemctl restart bind9
