@@ -27,3 +27,7 @@ zone "test20.thomas-pede.sb.uclllabs.be" {
     type master;
     file "/etc/bind/db.test20.thomas-pede.sb.uclllabs.be";
 };
+zone "workpls.thomas-pede.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/db.workpls.thomas-pede.sb.uclllabs.be";
+};
