@@ -1,6 +1,6 @@
 $TTL 604800
 @       IN      SOA     ns1.uclllabs.be. admin.thomas-pede.sb.uclllabs.be. (
-		        2023070920    ;Serial
+		        2023070921    ;Serial
                               604800     ; Refresh
                               86400      ; Retry
                               2419200    ; Expire
@@ -31,3 +31,7 @@ www2	IN	A	193.191.177.223
 secure	IN	A	193.191.177.223
 ;Name Server Records
 supersecure	IN	A	193.191.177.223
+;Name Server Records
+mx   IN      A       193.191.177.233
+;Name Server MX
+@	IN	MX	10 mx.thomas-pede.sb.uclllabs.be.
