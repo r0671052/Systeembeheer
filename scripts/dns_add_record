@@ -7,7 +7,7 @@ NAME=$3
 IP=$4
 ZONE=$5
 
-echo "Gekozen option is $OPTION"
+echo "Gekozen option is $OPTION, and zone $ZONE"
 
 while getopts 't:' OPTIONS; do
 	case "$OPTIONS" in
@@ -17,7 +17,8 @@ while getopts 't:' OPTIONS; do
 				echo "Writing record"
 				echo ";Name Server Records"		 >>/etc/bind/db.$ZONE
 				echo "${NAME}	IN	A	${IP}"    >>/etc/bind/db.$ZONE
-                   elif [ $RTYPE == MX ]
+                   
+		   elif [ $OPTION == MX ]
 			then
 				echo "Creating record"
 				echo ";Name Server Records"		 >>/etc/bind/db.$ZONE
@@ -25,7 +26,8 @@ while getopts 't:' OPTIONS; do
 				echo "Writing mx record"
 				echo ";Name Server MX"			>>/etc/bind/db.$ZONE
 				echo "@	IN	MX	10 ${NAME}.${ZONE}."  >>/etc/bind/db.$ZONE
-		   elif [ $RTYPE == CNAME ]
+
+		   elif [ $OPTION == CNAME ]
 			then
 				echo "Creating CNAME record"
 				echo ";Name Server CNAME"		>>/etc/bind/db.$ZONE
