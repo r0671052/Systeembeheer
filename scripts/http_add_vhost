@@ -1,6 +1,18 @@
 #!/bin/bash
+#User is root check
+if [ "$EUID" -ne 0 ];then
+    echo "Please run this script as root user"
+    exit 1
+fi
+
 NAME=$(echo "$1" | cut -d '.' -f 1)
+SUBDOMAIN=$(echo "$1" | cut -d "." -f2)
 echo "$NAME"
+
+if [ ! -f "/etc/bind/db.$SUBDOMAIN.thomas-pede.sb.uclllabs.be" ]; then
+    echo "subdomain $SUBDOMAIN does not exist"
+    exit 1
+fi
 
 cat >> /etc/apache2/sites-available/$1.conf << EOL
 	<VirtualHost *:80>
@@ -16,7 +28,7 @@ EOL
 mkdir /var/www/html/$1
 echo "welcome vhost_name" >> /var/www/html/$1/index.html
 echo "welcome www.$(echo "$1" | cut -d '.' -f 1-2)" >> /var/www/html/$1/index.html
-a2ensite $1
 
+a2ensite $1
 systemctl reload apache2
-systemctl restart apache2
+

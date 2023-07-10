@@ -14,13 +14,13 @@ while getopts 't:' OPTIONS; do
 		t)
 		   if [ $OPTION == A ]
 			then
-				echo "Writing record"
+				echo "Creating A record"
 				echo ";Name Server Records"		 >>/etc/bind/db.$ZONE
 				echo "${NAME}	IN	A	${IP}"    >>/etc/bind/db.$ZONE
                    
 		   elif [ $OPTION == MX ]
 			then
-				echo "Creating record"
+				echo "Creating MX record"
 				echo ";Name Server Records"		 >>/etc/bind/db.$ZONE
 				echo "${NAME}   IN      A       ${IP}"    >>/etc/bind/db.$ZONE
 				echo "Writing mx record"
